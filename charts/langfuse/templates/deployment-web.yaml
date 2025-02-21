@@ -22,12 +22,12 @@ spec:
         {{- include "langfuse.selectorLabels" . | nindent 8 }}
         {{- if .Values.langfuse.commonPodLabels -}}
         {{- range $key, $value := .Values.langfuse.commonPodLabels }}
-        {{ $key }}: {{ $value }}
+        {{ $key }}: {{ $value | quote }}
         {{- end }}
         {{- end }}
         {{- if .Values.langfuse.web.podLabels -}}
         {{- range $key, $value := .Values.langfuse.web.podLabels }}
-        {{ $key }}: {{ $value }}
+        {{ $key }}: {{ $value | quote }}
         {{- end }}
         {{- end }}
         app: web
